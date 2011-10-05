@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <WFConnector/WFHardwareConnectorDelegate.h>
+#import <WFConnector/WFConnector.h>
 
 @interface RJAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, WFHardwareConnectorDelegate>
 

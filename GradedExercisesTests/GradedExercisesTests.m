@@ -9,7 +9,9 @@
 #import "GradedExercisesTests.h"
 #import <WFConnector/WFBikePowerData.h>
 #import <WFConnector/WFHardwareConnectorDelegate.h>
+#import <WFConnector/WFConnectorSettings.h>
 #import "GEDataModel.h"
+#import "GEAccessoryHardwareInterface.h"
 
 @implementation GradedExercisesTests
 
@@ -26,22 +28,37 @@
     
     [super tearDown];
 }
-- (void)testCreatePowerData
+
+- (void)testCreatePowerDataInCoreData
 {
-    id<WFHardwareConnectorDelegate> app_delegate = (id<WFHardwareConnectorDelegate>)[[UIApplication sharedApplication] delegate];
 
-    WFBikePowerData *bikePowerData = [[WFBikePowerData alloc] initWithTime:1.0];
-
-    [GEDataModel insertObject:bikePowerData 
-                     withType:kGEPowerDataType 
-                    saveAfter:NO];
+    //[[GEAccessoryHardwareInterface sharedInterface] hardwareConnectorHasData];
+    WFConnectorSettings *settings = [[WFConnectorSettings alloc] init];
+    settings.useMetricUnits = NO;
+    settings.bikeWheelCircumference = 200;
     
-    [app_delegate hardwareConnectorHasData];
+    for (int i = 0; i<10; i++) {
+        WFBikePowerData *bikePowerData = [[WFBikePowerData alloc] initWithTime:1.0];
+        bikePowerData.sensorType = WF_BIKE_POWER_TYPE_WHEEL_TORQUE;
+        bikePowerData.fpAccumulatedTorque = i*100;
+        bikePowerData.ulAccumulatedTicks = i+20;
+        bikePowerData.fpCalculatedCrankTicks = i;
+        bikePowerData.ucInstCadence = 10;
+        bikePowerData.ulAveragePower = 10+i;
+        bikePowerData.ucEventCount = i;
+        bikePowerData.timestamp = i*1000;
+        bikePowerData.timestampOverflow = NO;
+        
+        [[GEDataModel sharedInstance] insertPowerData:bikePowerData 
+                                             withType:kGEPowerDataType 
+                                            saveAfter:YES];   
+    
+    }
+    
+    [settings release];
+    
     STAssertTrue(TRUE, @"");
+    
 }
-//- (void)testExample
-//{
-//    STFail(@"Unit tests are not implemented yet in GradedExercisesTests");
-//}
 
 @end

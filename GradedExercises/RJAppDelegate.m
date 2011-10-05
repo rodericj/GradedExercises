@@ -9,8 +9,9 @@
 #import "RJAppDelegate.h"
 
 #import "RJFirstViewController.h"
-
 #import "RJSecondViewController.h"
+
+#import "GEAccessoryHardwareInterface.h"
 
 @implementation RJAppDelegate
 
@@ -40,6 +41,9 @@
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    
+    [[GEAccessoryHardwareInterface sharedInterface] enableInterface];
     return YES;
 }
 
@@ -82,8 +86,37 @@
      */
 }
 
-- (void)hardwareConnectorHasData {
-    NSLog(@"have new data");
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector connectedSensor:(WFSensorConnection*)connectionInfo
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_SENSOR_CONNECTED object:nil];
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector disconnectedSensor:(WFSensorConnection*)connectionInfo
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_SENSOR_DISCONNECTED object:nil];
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnector:(WFHardwareConnector*)hwConnector stateChanged:(WFHardwareConnectorState_t)currentState
+{
+	BOOL connected = (currentState & WF_HWCONN_STATE_ACTIVE) ? TRUE : FALSE;
+	if (connected)
+	{
+        [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_HW_CONNECTED object:nil];
+	}
+	else
+	{
+        [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_HW_DISCONNECTED object:nil];
+	}
+}
+
+//--------------------------------------------------------------------------------
+- (void)hardwareConnectorHasData
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WF_NOTIFICATION_SENSOR_HAS_DATA object:nil];
+    
 }
 
 @end

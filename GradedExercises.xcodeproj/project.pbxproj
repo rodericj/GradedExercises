@@ -19,6 +19,10 @@
 		17491AC4143BFB2800E7135F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
 		17491AC5143BFB5700E7135F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
 		17491AC8143BFB7300E7135F /* GEDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AC7143BFB7300E7135F /* GEDataModel.m */; };
+		17491ACC143C004F00E7135F /* GEAccessoryHardwareInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ACB143C004F00E7135F /* GEAccessoryHardwareInterface.m */; };
+		17491AD3143C2E3900E7135F /* GEPowerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AD2143C2E3800E7135F /* GEPowerDataManager.m */; };
+		17491AD6143C2EFB00E7135F /* GECommonSensorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AD5143C2EFB00E7135F /* GECommonSensorManager.m */; };
+		17491ADB143C324500E7135F /* GEHeartRateDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ADA143C324500E7135F /* GEHeartRateDataManager.m */; };
 		17F2E2EA143BED1900405FBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2E9143BED1900405FBB /* UIKit.framework */; };
 		17F2E2EC143BED1900405FBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2EB143BED1900405FBB /* Foundation.framework */; };
 		17F2E2EE143BED1900405FBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2ED143BED1900405FBB /* CoreGraphics.framework */; };
@@ -69,6 +73,14 @@
 		17491AC3143BFB2800E7135F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		17491AC6143BFB7300E7135F /* GEDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEDataModel.h; path = DataModel/GEDataModel.h; sourceTree = "<group>"; };
 		17491AC7143BFB7300E7135F /* GEDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEDataModel.m; path = DataModel/GEDataModel.m; sourceTree = "<group>"; };
+		17491ACA143C004F00E7135F /* GEAccessoryHardwareInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEAccessoryHardwareInterface.h; path = HardwareInterface/GEAccessoryHardwareInterface.h; sourceTree = "<group>"; };
+		17491ACB143C004F00E7135F /* GEAccessoryHardwareInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEAccessoryHardwareInterface.m; path = HardwareInterface/GEAccessoryHardwareInterface.m; sourceTree = "<group>"; };
+		17491AD1143C2E3800E7135F /* GEPowerDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEPowerDataManager.h; path = DataManagers/GEPowerDataManager.h; sourceTree = "<group>"; };
+		17491AD2143C2E3800E7135F /* GEPowerDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEPowerDataManager.m; path = DataManagers/GEPowerDataManager.m; sourceTree = "<group>"; };
+		17491AD5143C2EFB00E7135F /* GECommonSensorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GECommonSensorManager.m; path = DataManagers/GECommonSensorManager.m; sourceTree = "<group>"; };
+		17491AD8143C31E200E7135F /* GECommonSensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GECommonSensorManager.h; path = DataManagers/GECommonSensorManager.h; sourceTree = "<group>"; };
+		17491AD9143C324500E7135F /* GEHeartRateDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEHeartRateDataManager.h; path = DataManagers/GEHeartRateDataManager.h; sourceTree = "<group>"; };
+		17491ADA143C324500E7135F /* GEHeartRateDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEHeartRateDataManager.m; path = DataManagers/GEHeartRateDataManager.m; sourceTree = "<group>"; };
 		17F2E2E5143BED1900405FBB /* GradedExercises.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradedExercises.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F2E2E9143BED1900405FBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17F2E2EB143BED1900405FBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +145,7 @@
 		17491AA9143BF60F00E7135F /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				17491AD7143C308200E7135F /* DataManagers */,
 				17491AB0143BF64900E7135F /* GeneratedModels */,
 				17491AAD143BF64000E7135F /* GEDataModel.xcdatamodeld */,
 				17491AC6143BFB7300E7135F /* GEDataModel.h */,
@@ -156,6 +169,28 @@
 				17491AB5143BFB0F00E7135F /* GEHeartRateData.m */,
 			);
 			name = GeneratedModels;
+			sourceTree = "<group>";
+		};
+		17491AC9143C001A00E7135F /* Hardware Interface */ = {
+			isa = PBXGroup;
+			children = (
+				17491ACA143C004F00E7135F /* GEAccessoryHardwareInterface.h */,
+				17491ACB143C004F00E7135F /* GEAccessoryHardwareInterface.m */,
+			);
+			name = "Hardware Interface";
+			sourceTree = "<group>";
+		};
+		17491AD7143C308200E7135F /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				17491AD8143C31E200E7135F /* GECommonSensorManager.h */,
+				17491AD5143C2EFB00E7135F /* GECommonSensorManager.m */,
+				17491AD9143C324500E7135F /* GEHeartRateDataManager.h */,
+				17491ADA143C324500E7135F /* GEHeartRateDataManager.m */,
+				17491AD1143C2E3800E7135F /* GEPowerDataManager.h */,
+				17491AD2143C2E3800E7135F /* GEPowerDataManager.m */,
+			);
+			name = DataManagers;
 			sourceTree = "<group>";
 		};
 		17F2E2DA143BED1900405FBB = {
@@ -194,6 +229,7 @@
 		17F2E2EF143BED1900405FBB /* GradedExercises */ = {
 			isa = PBXGroup;
 			children = (
+				17491AC9143C001A00E7135F /* Hardware Interface */,
 				17491AA9143BF60F00E7135F /* DataModel */,
 				17F2E2F8143BED1900405FBB /* RJAppDelegate.h */,
 				17F2E2F9143BED1900405FBB /* RJAppDelegate.m */,
@@ -368,6 +404,10 @@
 				17491ABF143BFB0F00E7135F /* GEWorkout.m in Sources */,
 				17491AC2143BFB0F00E7135F /* GESensorData.m in Sources */,
 				17491AC8143BFB7300E7135F /* GEDataModel.m in Sources */,
+				17491ACC143C004F00E7135F /* GEAccessoryHardwareInterface.m in Sources */,
+				17491AD3143C2E3900E7135F /* GEPowerDataManager.m in Sources */,
+				17491AD6143C2EFB00E7135F /* GECommonSensorManager.m in Sources */,
+				17491ADB143C324500E7135F /* GEHeartRateDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +500,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -478,7 +518,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

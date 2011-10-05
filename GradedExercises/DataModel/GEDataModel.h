@@ -9,11 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <WFConnector/WFBikePowerData.h>
 #import "GEPowerData.h"
+#import <CoreData/CoreData.h>
 
-#define kGEPowerDataType    @"GEPowerData"
+#define kGEPowerDataType    @"PowerData"
 
-@interface GEDataModel : NSObject
+@interface GEDataModel : NSObject {
 
-+(GEPowerData *)insertObject:(NSObject *)object withType:(NSString *)type saveAfter:(BOOL)saveAfter;
+    NSPersistentStoreCoordinator        *_persistentStoreCoordinator;
+    NSManagedObjectModel                *_managedObjectModel;
+    NSManagedObjectContext              *_managedObjectContext;	
+}
+
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator		*persistentStoreCoordinator;
+@property (nonatomic, retain, readonly) NSManagedObjectModel				*managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext				*managedObjectContext;
+
+-(GEPowerData *)insertPowerData:(WFBikePowerData *)power withType:(NSString *)type saveAfter:(BOOL)saveAfter;
++ (GEDataModel*)sharedInstance;
 
 @end

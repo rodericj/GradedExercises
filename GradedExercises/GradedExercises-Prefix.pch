@@ -12,3 +12,10 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+#define WF_NOTIFICATION_HW_CONNECTED           @"WFNotificationHWConnected"
+#define WF_NOTIFICATION_HW_DISCONNECTED        @"WFNotificationHWDisconnected"
+#define WF_NOTIFICATION_SENSOR_CONNECTED       @"WFNotificationSensorConnected"
+#define WF_NOTIFICATION_SENSOR_DISCONNECTED    @"WFNotificationSensorDisconnected"
+#define WF_NOTIFICATION_SENSOR_HAS_DATA        @"WFNotificationSensorHasData"

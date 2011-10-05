@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WFConnector/WFConnector.h>
 
-@interface RJFirstViewController : UIViewController
+@interface RJFirstViewController : UIViewController <WFSensorConnectionDelegate>
 
+-(IBAction)connectHeartRate:(id)sender;
 @end

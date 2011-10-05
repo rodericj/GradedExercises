@@ -8,7 +8,49 @@
 
 #import "RJFirstViewController.h"
 #import <WFConnector/WFBikePowerData.h>
+#import "WFConnector/WFConnectorSettings.h"
+#import "WFConnector/WFConnectionParams.h"
+#import "WFConnector/WFHardwareConnector.h"
+
+#import "GEHeartRateDataManager.h"
+
 @implementation RJFirstViewController
+
+-(IBAction)connectHeartRate:(id)sender {
+    WFConnectionParams* params = nil;
+    //
+    // if wildcard search is specified, create empty connection params.
+    if (YES)// wildcardSwitch.on )
+    {
+        params = [[[WFConnectionParams alloc] init] autorelease];
+        params.sensorType = WF_SENSORTYPE_HEARTRATE;
+    }
+    //
+    // otherwise, get the params from the stored settings.
+    else
+    {
+        params = [[WFHardwareConnector sharedConnector].settings connectionParamsForSensorType:WF_SENSORTYPE_HEARTRATE];
+    }
+    
+    if ( params != nil)
+    {
+        // if the connection request is a wildcard, use proximity search.
+        if ( params.isWildcard )
+        {
+            [GEHeartRateDataManager sharedInstance].sensorConnection = [[WFHardwareConnector sharedConnector] requestSensorConnection:params withProximity:WF_PROXIMITY_RANGE_1];
+        }
+        // otherwise, use normal connection request.
+        else
+        {
+            [GEHeartRateDataManager sharedInstance].sensorConnection = [[WFHardwareConnector sharedConnector] requestSensorConnection:params];
+        }
+        
+        // set delegate to receive connection status changes.
+        [GEHeartRateDataManager sharedInstance].sensorConnection.delegate = self;
+    }
+
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +74,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    WFBikePowerData *bikePowerData = [[WFBikePowerData alloc] initWithTime:1.0];
-    NSLog(@"bikePowerData is %@", bikePowerData);
 }
 
 - (void)viewDidUnload
@@ -72,5 +112,10 @@
         return YES;
     }
 }
+
+- (void)connection:(WFSensorConnection*)connectionInfo stateChanged:(WFSensorConnectionStatus_t)connState {
+    NSLog(@"something about a connection");
+}
+
 
 @end
