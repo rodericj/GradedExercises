@@ -7,7 +7,7 @@
 //
 
 #import "RJFirstViewController.h"
-
+#import <WFConnector/WFBikePowerData.h>
 @implementation RJFirstViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    WFBikePowerData *bikePowerData = [[WFBikePowerData alloc] initWithTime:1.0];
+    NSLog(@"bikePowerData is %@", bikePowerData);
 }
 
 - (void)viewDidUnload

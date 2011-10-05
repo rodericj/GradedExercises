@@ -28,6 +28,8 @@
 		17F2E31E143BED1A00405FBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2EB143BED1900405FBB /* Foundation.framework */; };
 		17F2E326143BED1A00405FBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F2E324143BED1A00405FBB /* InfoPlist.strings */; };
 		17F2E329143BED1A00405FBB /* GradedExercisesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F2E328143BED1A00405FBB /* GradedExercisesTests.m */; };
+		17F2E336143BEE2400405FBB /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E335143BEE2400405FBB /* WFConnector.framework */; };
+		17F2E338143BEE2800405FBB /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E337143BEE2800405FBB /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +47,17 @@
 		17F2E2E9143BED1900405FBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17F2E2EB143BED1900405FBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17F2E2ED143BED1900405FBB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		17F2E2F1143BED1900405FBB /* GradedExercises-Info.plist */ = {isa = PBXFileReference; path = "GradedExercises-Info.plist"; sourceTree = "<group>"; };
+		17F2E2F1143BED1900405FBB /* GradedExercises-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradedExercises-Info.plist"; sourceTree = "<group>"; };
 		17F2E2F3143BED1900405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17F2E2F5143BED1900405FBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		17F2E2F7143BED1900405FBB /* GradedExercises-Prefix.pch */ = {isa = PBXFileReference; path = "GradedExercises-Prefix.pch"; sourceTree = "<group>"; };
-		17F2E2F8143BED1900405FBB /* RJAppDelegate.h */ = {isa = PBXFileReference; path = RJAppDelegate.h; sourceTree = "<group>"; };
+		17F2E2F7143BED1900405FBB /* GradedExercises-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradedExercises-Prefix.pch"; sourceTree = "<group>"; };
+		17F2E2F8143BED1900405FBB /* RJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJAppDelegate.h; sourceTree = "<group>"; };
 		17F2E2F9143BED1900405FBB /* RJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJAppDelegate.m; sourceTree = "<group>"; };
-		17F2E2FB143BED1900405FBB /* RJFirstViewController.h */ = {isa = PBXFileReference; path = RJFirstViewController.h; sourceTree = "<group>"; };
+		17F2E2FB143BED1900405FBB /* RJFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJFirstViewController.h; sourceTree = "<group>"; };
 		17F2E2FC143BED1900405FBB /* RJFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJFirstViewController.m; sourceTree = "<group>"; };
 		17F2E2FE143BED1900405FBB /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		17F2E300143BED1900405FBB /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		17F2E302143BED1900405FBB /* RJSecondViewController.h */ = {isa = PBXFileReference; path = RJSecondViewController.h; sourceTree = "<group>"; };
+		17F2E302143BED1900405FBB /* RJSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJSecondViewController.h; sourceTree = "<group>"; };
 		17F2E303143BED1900405FBB /* RJSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJSecondViewController.m; sourceTree = "<group>"; };
 		17F2E305143BED1900405FBB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		17F2E307143BED1900405FBB /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
@@ -65,10 +67,12 @@
 		17F2E313143BED1900405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RJSecondViewController_iPad.xib; sourceTree = "<group>"; };
 		17F2E31A143BED1A00405FBB /* GradedExercisesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradedExercisesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F2E31B143BED1A00405FBB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		17F2E323143BED1A00405FBB /* GradedExercisesTests-Info.plist */ = {isa = PBXFileReference; path = "GradedExercisesTests-Info.plist"; sourceTree = "<group>"; };
+		17F2E323143BED1A00405FBB /* GradedExercisesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradedExercisesTests-Info.plist"; sourceTree = "<group>"; };
 		17F2E325143BED1A00405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		17F2E327143BED1A00405FBB /* GradedExercisesTests.h */ = {isa = PBXFileReference; path = GradedExercisesTests.h; sourceTree = "<group>"; };
+		17F2E327143BED1A00405FBB /* GradedExercisesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradedExercisesTests.h; sourceTree = "<group>"; };
 		17F2E328143BED1A00405FBB /* GradedExercisesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradedExercisesTests.m; sourceTree = "<group>"; };
+		17F2E335143BEE2400405FBB /* WFConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WFConnector.framework; path = ../../../Dropbox/wf_api_2.0/dependencies/WFConnector.framework; sourceTree = "<group>"; };
+		17F2E337143BEE2800405FBB /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F2E2EA143BED1900405FBB /* UIKit.framework in Frameworks */,
+				17F2E336143BEE2400405FBB /* WFConnector.framework in Frameworks */,
+				17F2E338143BEE2800405FBB /* ExternalAccessory.framework in Frameworks */,
 				17F2E2EC143BED1900405FBB /* Foundation.framework in Frameworks */,
 				17F2E2EE143BED1900405FBB /* CoreGraphics.framework in Frameworks */,
 			);
@@ -117,6 +123,8 @@
 		17F2E2E8143BED1900405FBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17F2E337143BEE2800405FBB /* ExternalAccessory.framework */,
+				17F2E335143BEE2400405FBB /* WFConnector.framework */,
 				17F2E2E9143BED1900405FBB /* UIKit.framework */,
 				17F2E2EB143BED1900405FBB /* Foundation.framework */,
 				17F2E2ED143BED1900405FBB /* CoreGraphics.framework */,
@@ -415,9 +423,17 @@
 		17F2E32D143BED1A00405FBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Dropbox/wf_api_2.0/dependencies\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GradedExercises/GradedExercises-Prefix.pch";
 				INFOPLIST_FILE = "GradedExercises/GradedExercises-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -426,9 +442,17 @@
 		17F2E32E143BED1A00405FBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Dropbox/wf_api_2.0/dependencies\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GradedExercises/GradedExercises-Prefix.pch";
 				INFOPLIST_FILE = "GradedExercises/GradedExercises-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
