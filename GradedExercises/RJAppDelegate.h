@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WFConnector/WFHardwareConnectorDelegate.h>
 
-@interface RJAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface RJAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, WFHardwareConnectorDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

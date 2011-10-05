@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="870" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="HeartRateData" representedClassName="GEHeartRateData" syncable="YES">
+        <attribute name="accumBeatCount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="beatTime" attributeType="Date" syncable="YES"/>
+        <attribute name="computedHeartRate" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PowerData" representedClassName="GEPowerData" parentEntity="SensorData" syncable="YES">
+        <attribute name="accumulatedTicks" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="accumulatedTorque" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="averagePower" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="calculatedCrankTicks" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventCount" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="instCadence" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sensorType" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="SensorData" representedClassName="GESensorData" isAbstract="YES" syncable="YES">
+        <attribute name="isDataStale" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="settings" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="workout" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="sensorData" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="GEUser" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Workout" inverseName="user" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="GEWorkout" syncable="YES">
+        <relationship name="sensorData" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SensorData" inverseName="workout" inverseEntity="SensorData" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="workouts" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Workout" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="SensorData" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="PowerData" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="HeartRateData" positionX="160" positionY="192" width="128" height="90"/>
+    </elements>
+</model>
