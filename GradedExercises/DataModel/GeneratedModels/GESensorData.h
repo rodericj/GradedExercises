@@ -2,7 +2,7 @@
 //  GESensorData.h
 //  GradedExercises
 //
-//  Created by roderic campbell on 10/4/11.
+//  Created by roderic campbell on 10/8/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,10 +13,10 @@
 
 @interface GESensorData : NSManagedObject
 
-@property (nonatomic) int64_t time;
-@property (nonatomic) BOOL isDataStale;
-@property (nonatomic) int16_t settings;
-@property (nonatomic) NSTimeInterval timestamp;
+@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic, retain) NSNumber * isDataStale;
+@property (nonatomic, retain) NSNumber * settings;
+@property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *workout;
 @end
 

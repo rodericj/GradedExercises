@@ -165,14 +165,28 @@ static GEDataModel *gGEDataModel = nil;
 	return gGEDataModel;
 }
 
--(GEPowerData *)insertPowerData:(WFBikePowerData *)power withType:(NSString *)type saveAfter:(BOOL)saveAfter {
+-(GEHeartRateData *)insertHeartRateData:(WFHeartrateData *)heartRate rawHeartRateData:(id)rawHeartRateData saveAfter:(BOOL)saveAfter {
+    GEHeartRateData *newHRData = [NSEntityDescription insertNewObjectForEntityForName:kGEHeartRateDataType 
+                                                              inManagedObjectContext:self.managedObjectContext];
+    newHRData.accumBeatCount        = [NSNumber numberWithInt:heartRate.accumBeatCount];
+    newHRData.beatTime              = [NSNumber numberWithInt:heartRate.beatTime];
+    newHRData.computedHeartRate     = [NSNumber numberWithInt:heartRate.computedHeartrate];
+    newHRData.timestamp             = [NSDate dateWithTimeIntervalSince1970:(int)heartRate.timestamp];
+    NSLog(@"new heart rate is %@", newHRData);
+    if (saveAfter) {
+        [self.managedObjectContext save:nil];
+    }
+    return newHRData;
+}
+
+-(GEPowerData *)insertPowerData:(WFBikePowerData *)power saveAfter:(BOOL)saveAfter {
     GEPowerData *newPowerData = [NSEntityDescription insertNewObjectForEntityForName:kGEPowerDataType 
                                                               inManagedObjectContext:self.managedObjectContext];
-    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
-    newPowerData.accumulatedTorque      = power.fpAccumulatedTorque;
-    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
-    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
-    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
+//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
+//    newPowerData.accumulatedTorque      = power.fpAccumulatedTorque;
+//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
+//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
+//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
 
     if (saveAfter) {
         [self.managedObjectContext save:nil];

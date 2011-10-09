@@ -2,7 +2,7 @@
 //  GEPowerData.h
 //  GradedExercises
 //
-//  Created by roderic campbell on 10/4/11.
+//  Created by roderic campbell on 10/8/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,12 +13,12 @@
 
 @interface GEPowerData : GESensorData
 
-@property (nonatomic) int64_t accumulatedTorque;
-@property (nonatomic) int64_t calculatedCrankTicks;
-@property (nonatomic) int16_t sensorType;
-@property (nonatomic) int64_t eventCount;
-@property (nonatomic) int16_t instCadence;
-@property (nonatomic) int64_t accumulatedTicks;
-@property (nonatomic) int16_t averagePower;
+@property (nonatomic, retain) NSNumber * accumulatedTorque;
+@property (nonatomic, retain) NSNumber * calculatedCrankTicks;
+@property (nonatomic, retain) NSNumber * sensorType;
+@property (nonatomic, retain) NSNumber * eventCount;
+@property (nonatomic, retain) NSNumber * instCadence;
+@property (nonatomic, retain) NSNumber * accumulatedTicks;
+@property (nonatomic, retain) NSNumber * averagePower;
 
 @end

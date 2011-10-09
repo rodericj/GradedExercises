@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="870" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="HeartRateData" representedClassName="GEHeartRateData" syncable="YES">
+    <entity name="HeartRateData" representedClassName="GEHeartRateData" parentEntity="SensorData" syncable="YES">
         <attribute name="accumBeatCount" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="beatTime" attributeType="Date" syncable="YES"/>
+        <attribute name="beatTime" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="computedHeartRate" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="PowerData" representedClassName="GEPowerData" parentEntity="SensorData" syncable="YES">

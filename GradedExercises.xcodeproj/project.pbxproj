@@ -11,11 +11,8 @@
 		17491AA7143BF55600E7135F /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AA4143BF27C00E7135F /* WFConnector.framework */; };
 		17491AA8143BF56200E7135F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E337143BEE2800405FBB /* ExternalAccessory.framework */; };
 		17491AAF143BF64000E7135F /* GEDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17491AAD143BF64000E7135F /* GEDataModel.xcdatamodeld */; };
-		17491AB6143BFB0F00E7135F /* GEHeartRateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AB5143BFB0F00E7135F /* GEHeartRateData.m */; };
 		17491AB9143BFB0F00E7135F /* GEUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AB8143BFB0F00E7135F /* GEUser.m */; };
-		17491ABC143BFB0F00E7135F /* GEPowerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ABB143BFB0F00E7135F /* GEPowerData.m */; };
 		17491ABF143BFB0F00E7135F /* GEWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ABE143BFB0F00E7135F /* GEWorkout.m */; };
-		17491AC2143BFB0F00E7135F /* GESensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AC1143BFB0F00E7135F /* GESensorData.m */; };
 		17491AC4143BFB2800E7135F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
 		17491AC5143BFB5700E7135F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
 		17491AC8143BFB7300E7135F /* GEDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AC7143BFB7300E7135F /* GEDataModel.m */; };
@@ -23,6 +20,9 @@
 		17491AD3143C2E3900E7135F /* GEPowerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AD2143C2E3800E7135F /* GEPowerDataManager.m */; };
 		17491AD6143C2EFB00E7135F /* GECommonSensorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AD5143C2EFB00E7135F /* GECommonSensorManager.m */; };
 		17491ADB143C324500E7135F /* GEHeartRateDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ADA143C324500E7135F /* GEHeartRateDataManager.m */; };
+		17491AE41441785B00E7135F /* GEPowerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE31441785B00E7135F /* GEPowerData.m */; };
+		17491AE71441789A00E7135F /* GEHeartRateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE61441789A00E7135F /* GEHeartRateData.m */; };
+		17491AEA1441796400E7135F /* GESensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE91441796400E7135F /* GESensorData.m */; };
 		17F2E2EA143BED1900405FBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2E9143BED1900405FBB /* UIKit.framework */; };
 		17F2E2EC143BED1900405FBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2EB143BED1900405FBB /* Foundation.framework */; };
 		17F2E2EE143BED1900405FBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2ED143BED1900405FBB /* CoreGraphics.framework */; };
@@ -60,16 +60,10 @@
 /* Begin PBXFileReference section */
 		17491AA4143BF27C00E7135F /* WFConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WFConnector.framework; path = ../../Dropbox/wf_api_2.0/dependencies/WFConnector.framework; sourceTree = "<group>"; };
 		17491AAE143BF64000E7135F /* GEDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GEDataModel.xcdatamodel; sourceTree = "<group>"; };
-		17491AB4143BFB0F00E7135F /* GEHeartRateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEHeartRateData.h; path = DataModel/GeneratedModels/GEHeartRateData.h; sourceTree = "<group>"; };
-		17491AB5143BFB0F00E7135F /* GEHeartRateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEHeartRateData.m; path = DataModel/GeneratedModels/GEHeartRateData.m; sourceTree = "<group>"; };
 		17491AB7143BFB0F00E7135F /* GEUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEUser.h; path = DataModel/GeneratedModels/GEUser.h; sourceTree = "<group>"; };
 		17491AB8143BFB0F00E7135F /* GEUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEUser.m; path = DataModel/GeneratedModels/GEUser.m; sourceTree = "<group>"; };
-		17491ABA143BFB0F00E7135F /* GEPowerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEPowerData.h; path = DataModel/GeneratedModels/GEPowerData.h; sourceTree = "<group>"; };
-		17491ABB143BFB0F00E7135F /* GEPowerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEPowerData.m; path = DataModel/GeneratedModels/GEPowerData.m; sourceTree = "<group>"; };
 		17491ABD143BFB0F00E7135F /* GEWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEWorkout.h; path = DataModel/GeneratedModels/GEWorkout.h; sourceTree = "<group>"; };
 		17491ABE143BFB0F00E7135F /* GEWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEWorkout.m; path = DataModel/GeneratedModels/GEWorkout.m; sourceTree = "<group>"; };
-		17491AC0143BFB0F00E7135F /* GESensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GESensorData.h; path = DataModel/GeneratedModels/GESensorData.h; sourceTree = "<group>"; };
-		17491AC1143BFB0F00E7135F /* GESensorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GESensorData.m; path = DataModel/GeneratedModels/GESensorData.m; sourceTree = "<group>"; };
 		17491AC3143BFB2800E7135F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		17491AC6143BFB7300E7135F /* GEDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEDataModel.h; path = DataModel/GEDataModel.h; sourceTree = "<group>"; };
 		17491AC7143BFB7300E7135F /* GEDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEDataModel.m; path = DataModel/GEDataModel.m; sourceTree = "<group>"; };
@@ -81,6 +75,12 @@
 		17491AD8143C31E200E7135F /* GECommonSensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GECommonSensorManager.h; path = DataManagers/GECommonSensorManager.h; sourceTree = "<group>"; };
 		17491AD9143C324500E7135F /* GEHeartRateDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEHeartRateDataManager.h; path = DataManagers/GEHeartRateDataManager.h; sourceTree = "<group>"; };
 		17491ADA143C324500E7135F /* GEHeartRateDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEHeartRateDataManager.m; path = DataManagers/GEHeartRateDataManager.m; sourceTree = "<group>"; };
+		17491AE21441785B00E7135F /* GEPowerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEPowerData.h; path = DataModel/GeneratedModels/GEPowerData.h; sourceTree = "<group>"; };
+		17491AE31441785B00E7135F /* GEPowerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEPowerData.m; path = DataModel/GeneratedModels/GEPowerData.m; sourceTree = "<group>"; };
+		17491AE51441789A00E7135F /* GEHeartRateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEHeartRateData.h; path = DataModel/GeneratedModels/GEHeartRateData.h; sourceTree = "<group>"; };
+		17491AE61441789A00E7135F /* GEHeartRateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEHeartRateData.m; path = DataModel/GeneratedModels/GEHeartRateData.m; sourceTree = "<group>"; };
+		17491AE81441796400E7135F /* GESensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GESensorData.h; path = DataModel/GeneratedModels/GESensorData.h; sourceTree = "<group>"; };
+		17491AE91441796400E7135F /* GESensorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GESensorData.m; path = DataModel/GeneratedModels/GESensorData.m; sourceTree = "<group>"; };
 		17F2E2E5143BED1900405FBB /* GradedExercises.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradedExercises.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F2E2E9143BED1900405FBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17F2E2EB143BED1900405FBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,16 +157,16 @@
 		17491AB0143BF64900E7135F /* GeneratedModels */ = {
 			isa = PBXGroup;
 			children = (
-				17491AC0143BFB0F00E7135F /* GESensorData.h */,
-				17491AC1143BFB0F00E7135F /* GESensorData.m */,
+				17491AE81441796400E7135F /* GESensorData.h */,
+				17491AE91441796400E7135F /* GESensorData.m */,
+				17491AE51441789A00E7135F /* GEHeartRateData.h */,
+				17491AE61441789A00E7135F /* GEHeartRateData.m */,
+				17491AE21441785B00E7135F /* GEPowerData.h */,
+				17491AE31441785B00E7135F /* GEPowerData.m */,
 				17491ABD143BFB0F00E7135F /* GEWorkout.h */,
 				17491ABE143BFB0F00E7135F /* GEWorkout.m */,
-				17491ABA143BFB0F00E7135F /* GEPowerData.h */,
-				17491ABB143BFB0F00E7135F /* GEPowerData.m */,
 				17491AB7143BFB0F00E7135F /* GEUser.h */,
 				17491AB8143BFB0F00E7135F /* GEUser.m */,
-				17491AB4143BFB0F00E7135F /* GEHeartRateData.h */,
-				17491AB5143BFB0F00E7135F /* GEHeartRateData.m */,
 			);
 			name = GeneratedModels;
 			sourceTree = "<group>";
@@ -398,16 +398,16 @@
 				17F2E2FD143BED1900405FBB /* RJFirstViewController.m in Sources */,
 				17F2E304143BED1900405FBB /* RJSecondViewController.m in Sources */,
 				17491AAF143BF64000E7135F /* GEDataModel.xcdatamodeld in Sources */,
-				17491AB6143BFB0F00E7135F /* GEHeartRateData.m in Sources */,
 				17491AB9143BFB0F00E7135F /* GEUser.m in Sources */,
-				17491ABC143BFB0F00E7135F /* GEPowerData.m in Sources */,
 				17491ABF143BFB0F00E7135F /* GEWorkout.m in Sources */,
-				17491AC2143BFB0F00E7135F /* GESensorData.m in Sources */,
 				17491AC8143BFB7300E7135F /* GEDataModel.m in Sources */,
 				17491ACC143C004F00E7135F /* GEAccessoryHardwareInterface.m in Sources */,
 				17491AD3143C2E3900E7135F /* GEPowerDataManager.m in Sources */,
 				17491AD6143C2EFB00E7135F /* GECommonSensorManager.m in Sources */,
 				17491ADB143C324500E7135F /* GEHeartRateDataManager.m in Sources */,
+				17491AE41441785B00E7135F /* GEPowerData.m in Sources */,
+				17491AE71441789A00E7135F /* GEHeartRateData.m in Sources */,
+				17491AEA1441796400E7135F /* GESensorData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

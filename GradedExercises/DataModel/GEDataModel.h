@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <WFConnector/WFBikePowerData.h>
+#import <WFConnector/WFHeartRateData.h>
+#import <WFConnector/WFHeartRateRawData.h>
 #import "GEPowerData.h"
+#import "GEHeartRateData.h"
 #import <CoreData/CoreData.h>
 
-#define kGEPowerDataType    @"PowerData"
+#define kGEPowerDataType            @"PowerData"
+#define kGEHeartRateDataType        @"HeartRateData"
+
+@class GEHeartRateData;
 
 @interface GEDataModel : NSObject {
 
@@ -24,7 +30,8 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel				*managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext				*managedObjectContext;
 
--(GEPowerData *)insertPowerData:(WFBikePowerData *)power withType:(NSString *)type saveAfter:(BOOL)saveAfter;
+-(GEHeartRateData *)insertHeartRateData:(WFHeartrateData *)heartRate rawHeartRateData:(WFHeartrateRawData *)rawHeartRateData saveAfter:(BOOL)saveAfter;
+-(GEPowerData *)insertPowerData:(WFBikePowerData *)power saveAfter:(BOOL)saveAfter;
 + (GEDataModel*)sharedInstance;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "GEHeartRateDataManager.h"
+#import "GEDataModel.h"
 
 @implementation GEHeartRateDataManager
 static GEHeartRateDataManager *gGEHeartRateDataManager = nil;
@@ -36,6 +37,7 @@ static GEHeartRateDataManager *gGEHeartRateDataManager = nil;
 	WFHeartrateRawData* hrRawData = [self.heartrateConnection getHeartrateRawData];
 	if ( hrData != nil )
 	{
+        [[GEDataModel sharedInstance] insertHeartRateData:hrData rawHeartRateData:hrRawData saveAfter:YES];
         [self incomingData:hrRawData.commonData];
         // update the signal efficiency.
 		        

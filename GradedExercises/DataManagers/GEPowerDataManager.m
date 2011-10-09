@@ -23,7 +23,7 @@
 }
 
 -(void)incomingPowerData {
-
+    NSLog(@"incoming power data");
     WFBikePowerData *bpData = [self.bikePowerConnection getBikePowerData];
     bpData.ulAveragePower = 100;
     WFBikePowerRawData *bpRawData = [self.bikePowerConnection getBikePowerRawData];

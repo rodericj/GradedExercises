@@ -2,18 +2,19 @@
 //  GEHeartRateData.h
 //  GradedExercises
 //
-//  Created by roderic campbell on 10/4/11.
+//  Created by roderic campbell on 10/8/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "GESensorData.h"
 
 
-@interface GEHeartRateData : NSManagedObject
+@interface GEHeartRateData : GESensorData
 
-@property (nonatomic) int16_t accumBeatCount;
-@property (nonatomic) NSTimeInterval beatTime;
-@property (nonatomic) int16_t computedHeartRate;
+@property (nonatomic, retain) NSNumber * accumBeatCount;
+@property (nonatomic, retain) NSNumber * beatTime;
+@property (nonatomic, retain) NSNumber * computedHeartRate;
 
 @end
