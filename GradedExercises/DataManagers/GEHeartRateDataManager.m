@@ -32,7 +32,6 @@ static GEHeartRateDataManager *gGEHeartRateDataManager = nil;
 
 -(void) incomingHeartRateData {
     
-    //TODO I'm almost getting data here.
     WFHeartrateData* hrData = [self.heartrateConnection getHeartrateData];
 	WFHeartrateRawData* hrRawData = [self.heartrateConnection getHeartrateRawData];
 	if ( hrData != nil )
@@ -40,28 +39,18 @@ static GEHeartRateDataManager *gGEHeartRateDataManager = nil;
         [[GEDataModel sharedInstance] insertHeartRateData:hrData rawHeartRateData:hrRawData saveAfter:YES];
         [self incomingData:hrRawData.commonData];
         // update the signal efficiency.
-		        
-        // unformatted value.
-		// computedHeartrateLabel.text = [NSString stringWithFormat:@"%d", hrData.computedHeartrate];
-        
-        // update basic data.
-        NSLog(@"computedHeartrateLabel %@", [hrData formattedHeartrate:TRUE]);
-		NSLog(@"beatTimeLabel %@", [NSString stringWithFormat:@"%d", hrData.beatTime]);
-		
-        // update raw data.
-		NSLog(@"beatCountLabel %@", [NSString stringWithFormat:@"%d", hrRawData.beatCount]);
-		NSLog(@"previousBeatLabel %@", [NSString stringWithFormat:@"%d", hrRawData.previousBeatTime]);
-        
 
+        // update basic data.
+        NSLog(@"computedHeartrateLabel %@\nbeatTimeLabel %@\nbeatCountLabel %@\npreviousBeatLabel %@", 
+              [hrData formattedHeartrate:TRUE],
+              [NSString stringWithFormat:@"%d", hrData.beatTime], 
+              [NSString stringWithFormat:@"%d", hrRawData.beatCount], 
+              [NSString stringWithFormat:@"%d", hrRawData.previousBeatTime]);
 	}
-	else 
-	{
-		//[self resetDisplay];
-	}
+
 }
 
 -(void)updateData {
-    NSLog(@"incoming heart date data");
     [self incomingHeartRateData];
 }
 @end
