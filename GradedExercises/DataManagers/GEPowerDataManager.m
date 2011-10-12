@@ -31,24 +31,13 @@
     {
         [self incomingData:bpRawData.commonData];
         
-               // update the basic data.
-        NSLog(@"%@",[NSString stringWithFormat:@"%d", bpData.ucEventCount]);
-        //		eventCountLabel.text = [NSString stringWithFormat:@"%d", bpData.ucEventCount];
-        
-        //		instantCadenceLabel.text = [NSString stringWithFormat:@"%d", bpData.ucInstCadence];
-        NSLog(@"%@",[NSString stringWithFormat:@"%d", bpData.ucInstCadence]);
-        
-        //		accumulatedTorqueLabel.text = [NSString stringWithFormat:@"%1.0f", bpData.fpAccumulatedTorque];
-        NSLog(@"%@",[NSString stringWithFormat:@"%1.0f", bpData.fpAccumulatedTorque]);
-        
-        //        averagePowerLabel.text = [bpData formattedPower:FALSE];
-        NSLog(@"%@",[bpData formattedPower:FALSE]);
-        // using unformatted value.
-        // averagePowerLabel.text = [NSString stringWithFormat:@"%d", bpData.ulAveragePower];
-        //
-        // only available for "power-only" meters.
-        //instantPowerLabel.text = [NSString stringWithFormat:@"%d", bpRawData.powerOnlyData.instantPower];
-        NSLog(@"%@", [NSString stringWithFormat:@"%d", bpRawData.powerOnlyData.instantPower]);
+        // update the basic data.
+        NSLog(@"event count %@\n inst cadence %@\naccumulated Torque %@\nformattedPower %@\ninstantPower %@",
+              [NSString stringWithFormat:@"%d", bpData.ucEventCount],
+              [NSString stringWithFormat:@"%d", bpData.ucInstCadence],
+              [NSString stringWithFormat:@"%1.0f", bpData.fpAccumulatedTorque],
+              [bpData formattedPower:FALSE],
+              [NSString stringWithFormat:@"%d", bpRawData.powerOnlyData.instantPower]);
         
         // update the common data.
        // [super updateCommonData:bpRawData.commonData];
@@ -56,7 +45,6 @@
     else
     {
         NSLog(@"Should probably notify the UI that we have no data");
-        //[self resetDisplay];
     }
 }
 
