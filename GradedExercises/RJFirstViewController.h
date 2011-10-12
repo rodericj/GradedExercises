@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <WFConnector/WFConnector.h>
+#import <CoreData/CoreData.h>
 
-@interface RJFirstViewController : UIViewController <WFSensorConnectionDelegate>
+@interface RJFirstViewController : UITableViewController <WFSensorConnectionDelegate, 
+UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
+    
+    NSFetchedResultsController *_fetchedResultsController;
+    
+}
 
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 -(IBAction)connectHeartRate:(id)sender;
 @end

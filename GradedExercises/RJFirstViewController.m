@@ -13,10 +13,14 @@
 #import "WFConnector/WFHardwareConnector.h"
 
 #import "GEHeartRateDataManager.h"
+#import "GEDataModel.h"
 
 @implementation RJFirstViewController
 
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 -(IBAction)connectHeartRate:(id)sender {
+    NSLog(@"tapped");
     WFConnectionParams* params = nil;
     //
     // if wildcard search is specified, create empty connection params.
@@ -73,7 +77,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
+    UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)] autorelease];
+    header.backgroundColor = [UIColor blackColor];
+    
+    //Set up the start button
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+    button.backgroundColor = [UIColor redColor];
+    [button addTarget:self action:@selector(connectHeartRate:) forControlEvents:UIControlEventTouchUpInside];
+    [header addSubview:button];
+    [button release];
+    
+    self.tableView.tableHeaderView = header;
 }
 
 - (void)viewDidUnload
@@ -117,5 +133,156 @@
     NSLog(@"something about a connection");
 }
 
+#pragma mark - FetchedResultsController
 
+/**
+ * The fetched results controller catches all SensorData in core data. This is used to populate the table with sensor info 
+ */
+-(NSFetchedResultsController *)fetchedResultsController {
+    if (!_fetchedResultsController) {
+        NSManagedObjectContext *context = [GEDataModel sharedInstance].managedObjectContext;
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        
+        // Configure the request's entity, and optionally its predicate.
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"SensorData" inManagedObjectContext:context];
+        fetchRequest.entity = entity;
+        
+        //Sort boilerplate
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        [fetchRequest setSortDescriptors:sortDescriptors];
+        [sortDescriptors release];
+        [sortDescriptor release];
+        
+        NSFetchedResultsController *controller = [[NSFetchedResultsController alloc]
+                                                  initWithFetchRequest:fetchRequest
+                                                  managedObjectContext:context
+                                                  sectionNameKeyPath:nil
+                                                  cacheName:nil];
+        [fetchRequest release];
+        controller.delegate = self;
+        _fetchedResultsController = controller;
+        
+    }
+    
+    NSError *error;    
+    BOOL success = [_fetchedResultsController performFetch:&error];
+    if (!success) {
+        NSLog(@"this fetch failed");
+    }
+    return _fetchedResultsController;
+}
+
+#pragma mark - UITableViewDataSource
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"row %@", indexPath);
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[self.fetchedResultsController sections] count];
+}
+
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *reuse = @"reuseablestringforheartrates";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+    
+    if (!cell) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuse] autorelease];
+    }
+    
+    GEHeartRateData *managedObject = (GEHeartRateData *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", managedObject.timestamp];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",managedObject.computedHeartRate];
+    // Configure the cell with data from the managed object.
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section { 
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo name];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [self.fetchedResultsController sectionIndexTitles];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+/*
+ Assume self has a property 'tableView' -- as is the case for an instance of a UITableViewController
+ subclass -- and a method configureCell:atIndexPath: which updates the contents of a given cell
+ with information from a managed object at the given index path in the fetched results controller.
+ */
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationTop];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+//            [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+//                    atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+-(void)dealloc {
+    self.fetchedResultsController = nil;
+    [super dealloc];
+}
 @end
