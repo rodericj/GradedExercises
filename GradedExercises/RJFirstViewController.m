@@ -162,14 +162,15 @@
         [fetchRequest release];
         controller.delegate = self;
         _fetchedResultsController = controller;
-        
+        NSError *error;    
+        BOOL success = [_fetchedResultsController performFetch:&error];
+        if (!success) {
+            NSLog(@"this fetch failed");
+        }
+
+
     }
     
-    NSError *error;    
-    BOOL success = [_fetchedResultsController performFetch:&error];
-    if (!success) {
-        NSLog(@"this fetch failed");
-    }
     return _fetchedResultsController;
 }
 
@@ -195,7 +196,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuse] autorelease];
     }
     
-    GEHeartRateData *managedObject = (GEHeartRateData *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    //TODO optiize this. Should use the actual fetchedResultsController
+    GEHeartRateData *managedObject = (GEHeartRateData *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", managedObject.timestamp];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",managedObject.computedHeartRate];
     // Configure the cell with data from the managed object.
