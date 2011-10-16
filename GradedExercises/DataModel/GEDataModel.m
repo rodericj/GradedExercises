@@ -44,7 +44,9 @@ static GEDataModel *gGEDataModel = nil;
 	if (_managedObjectModel != nil) {
 		return _managedObjectModel;
 	}
-	_managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];	
+    
+    NSBundle * bundle = [NSBundle bundleForClass:[self class]];
+    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:[NSArray arrayWithObject:bundle]];
 	return _managedObjectModel;
 }
 
@@ -58,10 +60,7 @@ static GEDataModel *gGEDataModel = nil;
 		return _persistentStoreCoordinator;
 	}
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
-	NSString *docDir = [paths objectAtIndex:0];	
-    
+    NSString *docDir = [[NSFileManager defaultManager] currentDirectoryPath];
 	NSURL *storeUrl = [NSURL fileURLWithPath:[docDir
 											  stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",
 																			  kGradedExercisesCoreDataFile,

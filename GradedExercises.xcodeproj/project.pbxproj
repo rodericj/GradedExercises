@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		17491AA5143BF27C00E7135F /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AA4143BF27C00E7135F /* WFConnector.framework */; };
-		17491AA7143BF55600E7135F /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AA4143BF27C00E7135F /* WFConnector.framework */; };
-		17491AA8143BF56200E7135F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E337143BEE2800405FBB /* ExternalAccessory.framework */; };
 		17491AAF143BF64000E7135F /* GEDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17491AAD143BF64000E7135F /* GEDataModel.xcdatamodeld */; };
 		17491AB9143BFB0F00E7135F /* GEUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AB8143BFB0F00E7135F /* GEUser.m */; };
 		17491ABF143BFB0F00E7135F /* GEWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ABE143BFB0F00E7135F /* GEWorkout.m */; };
-		17491AC4143BFB2800E7135F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
 		17491AC5143BFB5700E7135F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
 		17491AC8143BFB7300E7135F /* GEDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AC7143BFB7300E7135F /* GEDataModel.m */; };
 		17491ACC143C004F00E7135F /* GEAccessoryHardwareInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491ACB143C004F00E7135F /* GEAccessoryHardwareInterface.m */; };
@@ -23,6 +20,18 @@
 		17491AE41441785B00E7135F /* GEPowerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE31441785B00E7135F /* GEPowerData.m */; };
 		17491AE71441789A00E7135F /* GEHeartRateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE61441789A00E7135F /* GEHeartRateData.m */; };
 		17491AEA1441796400E7135F /* GESensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE91441796400E7135F /* GESensorData.m */; };
+		17E516A2144A4FFC00BB8367 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E31B143BED1A00405FBB /* SenTestingKit.framework */; };
+		17E516A3144A4FFC00BB8367 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2E9143BED1900405FBB /* UIKit.framework */; };
+		17E516A4144A4FFC00BB8367 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2EB143BED1900405FBB /* Foundation.framework */; };
+		17E516AA144A4FFC00BB8367 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E516A8144A4FFC00BB8367 /* InfoPlist.strings */; };
+		17E516AD144A4FFC00BB8367 /* GradedExercisesLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E516AC144A4FFC00BB8367 /* GradedExercisesLogicTests.m */; };
+		17E516B2144A539200BB8367 /* WFConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AA4143BF27C00E7135F /* WFConnector.framework */; };
+		17E516B5144A544100BB8367 /* GEDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AC7143BFB7300E7135F /* GEDataModel.m */; };
+		17E516B6144A545C00BB8367 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17491AC3143BFB2800E7135F /* CoreData.framework */; };
+		17E516B7144A595100BB8367 /* GEDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 17491AAD143BF64000E7135F /* GEDataModel.xcdatamodeld */; };
+		17E516B9144A598100BB8367 /* GEHeartRateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE61441789A00E7135F /* GEHeartRateData.m */; };
+		17E516BA144A599900BB8367 /* GESensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17491AE91441796400E7135F /* GESensorData.m */; };
+		17E516BB144A5EBC00BB8367 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E337143BEE2800405FBB /* ExternalAccessory.framework */; };
 		17F2E2EA143BED1900405FBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2E9143BED1900405FBB /* UIKit.framework */; };
 		17F2E2EC143BED1900405FBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2EB143BED1900405FBB /* Foundation.framework */; };
 		17F2E2EE143BED1900405FBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2ED143BED1900405FBB /* CoreGraphics.framework */; };
@@ -39,16 +48,11 @@
 		17F2E30E143BED1900405FBB /* RJFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F2E30C143BED1900405FBB /* RJFirstViewController_iPad.xib */; };
 		17F2E311143BED1900405FBB /* RJSecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F2E30F143BED1900405FBB /* RJSecondViewController_iPhone.xib */; };
 		17F2E314143BED1900405FBB /* RJSecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F2E312143BED1900405FBB /* RJSecondViewController_iPad.xib */; };
-		17F2E31C143BED1A00405FBB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E31B143BED1A00405FBB /* SenTestingKit.framework */; };
-		17F2E31D143BED1A00405FBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2E9143BED1900405FBB /* UIKit.framework */; };
-		17F2E31E143BED1A00405FBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E2EB143BED1900405FBB /* Foundation.framework */; };
-		17F2E326143BED1A00405FBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F2E324143BED1A00405FBB /* InfoPlist.strings */; };
-		17F2E329143BED1A00405FBB /* GradedExercisesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F2E328143BED1A00405FBB /* GradedExercisesTests.m */; };
 		17F2E338143BEE2800405FBB /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F2E337143BEE2800405FBB /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		17F2E31F143BED1A00405FBB /* PBXContainerItemProxy */ = {
+		17E516B3144A53FB00BB8367 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17F2E2DC143BED1900405FBB /* Project object */;
 			proxyType = 1;
@@ -81,6 +85,12 @@
 		17491AE61441789A00E7135F /* GEHeartRateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEHeartRateData.m; path = DataModel/GeneratedModels/GEHeartRateData.m; sourceTree = "<group>"; };
 		17491AE81441796400E7135F /* GESensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GESensorData.h; path = DataModel/GeneratedModels/GESensorData.h; sourceTree = "<group>"; };
 		17491AE91441796400E7135F /* GESensorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GESensorData.m; path = DataModel/GeneratedModels/GESensorData.m; sourceTree = "<group>"; };
+		17E516A1144A4FFC00BB8367 /* GradedExercisesLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradedExercisesLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17E516A7144A4FFC00BB8367 /* GradedExercisesLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradedExercisesLogicTests-Info.plist"; sourceTree = "<group>"; };
+		17E516A9144A4FFC00BB8367 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17E516AB144A4FFC00BB8367 /* GradedExercisesLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradedExercisesLogicTests.h; sourceTree = "<group>"; };
+		17E516AC144A4FFC00BB8367 /* GradedExercisesLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradedExercisesLogicTests.m; sourceTree = "<group>"; };
+		17E516AE144A4FFC00BB8367 /* GradedExercisesLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradedExercisesLogicTests-Prefix.pch"; sourceTree = "<group>"; };
 		17F2E2E5143BED1900405FBB /* GradedExercises.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradedExercises.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F2E2E9143BED1900405FBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17F2E2EB143BED1900405FBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,16 +113,24 @@
 		17F2E30D143BED1900405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RJFirstViewController_iPad.xib; sourceTree = "<group>"; };
 		17F2E310143BED1900405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RJSecondViewController_iPhone.xib; sourceTree = "<group>"; };
 		17F2E313143BED1900405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RJSecondViewController_iPad.xib; sourceTree = "<group>"; };
-		17F2E31A143BED1A00405FBB /* GradedExercisesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradedExercisesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F2E31B143BED1A00405FBB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		17F2E323143BED1A00405FBB /* GradedExercisesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradedExercisesTests-Info.plist"; sourceTree = "<group>"; };
-		17F2E325143BED1A00405FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		17F2E327143BED1A00405FBB /* GradedExercisesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradedExercisesTests.h; sourceTree = "<group>"; };
-		17F2E328143BED1A00405FBB /* GradedExercisesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradedExercisesTests.m; sourceTree = "<group>"; };
 		17F2E337143BEE2800405FBB /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		17E5169D144A4FFC00BB8367 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E516A2144A4FFC00BB8367 /* SenTestingKit.framework in Frameworks */,
+				17E516B6144A545C00BB8367 /* CoreData.framework in Frameworks */,
+				17E516A3144A4FFC00BB8367 /* UIKit.framework in Frameworks */,
+				17E516A4144A4FFC00BB8367 /* Foundation.framework in Frameworks */,
+				17E516BB144A5EBC00BB8367 /* ExternalAccessory.framework in Frameworks */,
+				17E516B2144A539200BB8367 /* WFConnector.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17F2E2E2143BED1900405FBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,19 +141,6 @@
 				17F2E2EC143BED1900405FBB /* Foundation.framework in Frameworks */,
 				17F2E2EE143BED1900405FBB /* CoreGraphics.framework in Frameworks */,
 				17491AA5143BF27C00E7135F /* WFConnector.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17F2E316143BED1A00405FBB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17491AC4143BFB2800E7135F /* CoreData.framework in Frameworks */,
-				17491AA7143BF55600E7135F /* WFConnector.framework in Frameworks */,
-				17491AA8143BF56200E7135F /* ExternalAccessory.framework in Frameworks */,
-				17F2E31C143BED1A00405FBB /* SenTestingKit.framework in Frameworks */,
-				17F2E31D143BED1A00405FBB /* UIKit.framework in Frameworks */,
-				17F2E31E143BED1A00405FBB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +198,31 @@
 			name = DataManagers;
 			sourceTree = "<group>";
 		};
+		17E516A5144A4FFC00BB8367 /* GradedExercisesLogicTests */ = {
+			isa = PBXGroup;
+			children = (
+				17E516AB144A4FFC00BB8367 /* GradedExercisesLogicTests.h */,
+				17E516AC144A4FFC00BB8367 /* GradedExercisesLogicTests.m */,
+				17E516A6144A4FFC00BB8367 /* Supporting Files */,
+			);
+			path = GradedExercisesLogicTests;
+			sourceTree = "<group>";
+		};
+		17E516A6144A4FFC00BB8367 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17E516A7144A4FFC00BB8367 /* GradedExercisesLogicTests-Info.plist */,
+				17E516A8144A4FFC00BB8367 /* InfoPlist.strings */,
+				17E516AE144A4FFC00BB8367 /* GradedExercisesLogicTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		17F2E2DA143BED1900405FBB = {
 			isa = PBXGroup;
 			children = (
 				17F2E2EF143BED1900405FBB /* GradedExercises */,
-				17F2E321143BED1A00405FBB /* GradedExercisesTests */,
+				17E516A5144A4FFC00BB8367 /* GradedExercisesLogicTests */,
 				17F2E2E8143BED1900405FBB /* Frameworks */,
 				17F2E2E6143BED1900405FBB /* Products */,
 			);
@@ -207,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				17F2E2E5143BED1900405FBB /* GradedExercises.app */,
-				17F2E31A143BED1A00405FBB /* GradedExercisesTests.octest */,
+				17E516A1144A4FFC00BB8367 /* GradedExercisesLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,28 +286,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		17F2E321143BED1A00405FBB /* GradedExercisesTests */ = {
-			isa = PBXGroup;
-			children = (
-				17F2E327143BED1A00405FBB /* GradedExercisesTests.h */,
-				17F2E328143BED1A00405FBB /* GradedExercisesTests.m */,
-				17F2E322143BED1A00405FBB /* Supporting Files */,
-			);
-			path = GradedExercisesTests;
-			sourceTree = "<group>";
-		};
-		17F2E322143BED1A00405FBB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				17F2E323143BED1A00405FBB /* GradedExercisesTests-Info.plist */,
-				17F2E324143BED1A00405FBB /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		17E516A0144A4FFC00BB8367 /* GradedExercisesLogicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17E516AF144A4FFC00BB8367 /* Build configuration list for PBXNativeTarget "GradedExercisesLogicTests" */;
+			buildPhases = (
+				17E5169C144A4FFC00BB8367 /* Sources */,
+				17E5169D144A4FFC00BB8367 /* Frameworks */,
+				17E5169E144A4FFC00BB8367 /* Resources */,
+				17E5169F144A4FFC00BB8367 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17E516B4144A53FB00BB8367 /* PBXTargetDependency */,
+			);
+			name = GradedExercisesLogicTests;
+			productName = GradedExercisesLogicTests;
+			productReference = 17E516A1144A4FFC00BB8367 /* GradedExercisesLogicTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		17F2E2E4143BED1900405FBB /* GradedExercises */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F2E32C143BED1A00405FBB /* Build configuration list for PBXNativeTarget "GradedExercises" */;
@@ -299,25 +324,6 @@
 			productName = GradedExercises;
 			productReference = 17F2E2E5143BED1900405FBB /* GradedExercises.app */;
 			productType = "com.apple.product-type.application";
-		};
-		17F2E319143BED1A00405FBB /* GradedExercisesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 17F2E32F143BED1A00405FBB /* Build configuration list for PBXNativeTarget "GradedExercisesTests" */;
-			buildPhases = (
-				17F2E315143BED1A00405FBB /* Sources */,
-				17F2E316143BED1A00405FBB /* Frameworks */,
-				17F2E317143BED1A00405FBB /* Resources */,
-				17F2E318143BED1A00405FBB /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				17F2E320143BED1A00405FBB /* PBXTargetDependency */,
-			);
-			name = GradedExercisesTests;
-			productName = GradedExercisesTests;
-			productReference = 17F2E31A143BED1A00405FBB /* GradedExercisesTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -340,12 +346,21 @@
 			projectRoot = "";
 			targets = (
 				17F2E2E4143BED1900405FBB /* GradedExercises */,
-				17F2E319143BED1A00405FBB /* GradedExercisesTests */,
+				17E516A0144A4FFC00BB8367 /* GradedExercisesLogicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		17E5169E144A4FFC00BB8367 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E516AA144A4FFC00BB8367 /* InfoPlist.strings in Resources */,
+				17E516B7144A595100BB8367 /* GEDataModel.xcdatamodeld in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17F2E2E3143BED1900405FBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,18 +377,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17F2E317143BED1A00405FBB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17F2E326143BED1A00405FBB /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17F2E318143BED1A00405FBB /* ShellScript */ = {
+		17E5169F144A4FFC00BB8367 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,6 +396,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		17E5169C144A4FFC00BB8367 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E516B5144A544100BB8367 /* GEDataModel.m in Sources */,
+				17E516AD144A4FFC00BB8367 /* GradedExercisesLogicTests.m in Sources */,
+				17E516BA144A599900BB8367 /* GESensorData.m in Sources */,
+				17E516B9144A598100BB8367 /* GEHeartRateData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17F2E2E1143BED1900405FBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,25 +429,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17F2E315143BED1A00405FBB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17F2E329143BED1A00405FBB /* GradedExercisesTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		17F2E320143BED1A00405FBB /* PBXTargetDependency */ = {
+		17E516B4144A53FB00BB8367 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 17F2E2E4143BED1900405FBB /* GradedExercises */;
-			targetProxy = 17F2E31F143BED1A00405FBB /* PBXContainerItemProxy */;
+			targetProxy = 17E516B3144A53FB00BB8367 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		17E516A8144A4FFC00BB8367 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17E516A9144A4FFC00BB8367 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		17F2E2F2143BED1900405FBB /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -470,17 +488,49 @@
 			name = RJSecondViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
-		17F2E324143BED1A00405FBB /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17F2E325143BED1A00405FBB /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		17E516B0144A4FFC00BB8367 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/../../Dropbox/wf_api_2.0/dependencies\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradedExercisesLogicTests/GradedExercisesLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "GradedExercisesLogicTests/GradedExercisesLogicTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-cclib",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		17E516B1144A4FFC00BB8367 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/../../Dropbox/wf_api_2.0/dependencies\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradedExercisesLogicTests/GradedExercisesLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "GradedExercisesLogicTests/GradedExercisesLogicTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-cclib",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		17F2E32A143BED1A00405FBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,53 +616,17 @@
 			};
 			name = Release;
 		};
-		17F2E330143BED1A00405FBB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GradedExercises.app/GradedExercises";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)/../../Dropbox/wf_api_2.0/dependencies\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GradedExercises/GradedExercises-Prefix.pch";
-				INFOPLIST_FILE = "GradedExercisesTests/GradedExercisesTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-lstdc++",
-					"-all_load",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		17F2E331143BED1A00405FBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GradedExercises.app/GradedExercises";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)/../../Dropbox/wf_api_2.0/dependencies\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GradedExercises/GradedExercises-Prefix.pch";
-				INFOPLIST_FILE = "GradedExercisesTests/GradedExercisesTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-lstdc++",
-					"-all_load",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17E516AF144A4FFC00BB8367 /* Build configuration list for PBXNativeTarget "GradedExercisesLogicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17E516B0144A4FFC00BB8367 /* Debug */,
+				17E516B1144A4FFC00BB8367 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		17F2E2DF143BED1900405FBB /* Build configuration list for PBXProject "GradedExercises" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -627,15 +641,6 @@
 			buildConfigurations = (
 				17F2E32D143BED1A00405FBB /* Debug */,
 				17F2E32E143BED1A00405FBB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		17F2E32F143BED1A00405FBB /* Build configuration list for PBXNativeTarget "GradedExercisesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17F2E330143BED1A00405FBB /* Debug */,
-				17F2E331143BED1A00405FBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

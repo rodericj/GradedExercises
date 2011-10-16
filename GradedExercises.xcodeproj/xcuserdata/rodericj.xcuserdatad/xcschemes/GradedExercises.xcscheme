@@ -31,9 +31,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17F2E319143BED1A00405FBB"
-               BuildableName = "GradedExercisesTests.octest"
-               BlueprintName = "GradedExercisesTests"
+               BlueprintIdentifier = "17E516A0144A4FFC00BB8367"
+               BuildableName = "GradedExercisesLogicTests.octest"
+               BlueprintName = "GradedExercisesLogicTests"
                ReferencedContainer = "container:GradedExercises.xcodeproj">
             </BuildableReference>
          </TestableReference>
