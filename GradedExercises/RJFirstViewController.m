@@ -19,6 +19,7 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
+#pragma mark - Connect Buttons toggled 
 -(IBAction)connectHeartRate:(id)sender {
     NSLog(@"tapped");
     WFConnectionParams* params = nil;
@@ -56,6 +57,8 @@
     
 }
 
+#pragma mark - View lifecycle
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -71,8 +74,6 @@
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
@@ -128,7 +129,7 @@
         return YES;
     }
 }
-
+#pragma mark - WFSensorConnection state changed
 - (void)connection:(WFSensorConnection*)connectionInfo stateChanged:(WFSensorConnectionStatus_t)connState {
     NSLog(@"something about a connection");
 }
