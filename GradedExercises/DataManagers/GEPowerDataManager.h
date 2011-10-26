@@ -14,6 +14,7 @@
 @interface GEPowerDataManager : GECommonSensorManager {
 
 }
++(GEPowerDataManager *)sharedInstance;
 
 @property (readonly, nonatomic) WFBikePowerConnection* bikePowerConnection;
 

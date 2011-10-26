@@ -7,9 +7,17 @@
 //
 
 #import "GEPowerDataManager.h"
+#import "GEDataModel.h"
 
 @implementation GEPowerDataManager
+static GEPowerDataManager *gGEPowerDataManager = nil;
 
++(GEPowerDataManager *)sharedInstance {
+    if (gGEPowerDataManager == nil) {
+        gGEPowerDataManager = [[super allocWithZone:NULL] init];
+    }
+    return gGEPowerDataManager;
+}
 //--------------------------------------------------------------------------------
 - (WFBikePowerConnection*)bikePowerConnection
 {
@@ -29,6 +37,8 @@
     WFBikePowerRawData *bpRawData = [self.bikePowerConnection getBikePowerRawData];
     if ( bpData != nil )
     {
+        [[GEDataModel sharedInstance] insertPowerData:bpData saveAfter:YES];
+        
         [self incomingData:bpRawData.commonData];
         
         // update the basic data.

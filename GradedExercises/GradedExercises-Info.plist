@@ -6,7 +6,7 @@
 	<string>en</string>
 	<key>UISupportedExternalAccessoryProtocols</key>
 	<array>
-		<string>com.momentumtechnolgy.fisica</string>
+		<string>com.momentumoftechnology.fisica</string>
 	</array>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>

@@ -12,29 +12,32 @@
 #import "WFConnector/WFConnectionParams.h"
 #import "WFConnector/WFHardwareConnector.h"
 
+#import "GEPowerDataManager.h"
 #import "GEHeartRateDataManager.h"
 #import "GEDataModel.h"
+
+#define kHeaderHeight   60
+#define kButtonWidth    120
+#define kScreenWidth    320
 
 @implementation RJFirstViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-#pragma mark - Connect Buttons toggled 
--(IBAction)connectHeartRate:(id)sender {
-    NSLog(@"tapped");
+-(void)connectGeneric:(WFSensorType_t)type instance:(GECommonSensorManager *)manager{
     WFConnectionParams* params = nil;
     //
     // if wildcard search is specified, create empty connection params.
     if (YES)// wildcardSwitch.on )
     {
         params = [[[WFConnectionParams alloc] init] autorelease];
-        params.sensorType = WF_SENSORTYPE_HEARTRATE;
+        params.sensorType = type;
     }
     //
     // otherwise, get the params from the stored settings.
     else
     {
-        params = [[WFHardwareConnector sharedConnector].settings connectionParamsForSensorType:WF_SENSORTYPE_HEARTRATE];
+        params = [[WFHardwareConnector sharedConnector].settings connectionParamsForSensorType:type];
     }
     
     if ( params != nil)
@@ -42,19 +45,29 @@
         // if the connection request is a wildcard, use proximity search.
         if ( params.isWildcard )
         {
-            [GEHeartRateDataManager sharedInstance].sensorConnection = [[WFHardwareConnector sharedConnector] requestSensorConnection:params withProximity:WF_PROXIMITY_RANGE_1];
+            manager.sensorConnection = [[WFHardwareConnector sharedConnector] requestSensorConnection:params withProximity:WF_PROXIMITY_RANGE_1];
         }
         // otherwise, use normal connection request.
         else
         {
-            [GEHeartRateDataManager sharedInstance].sensorConnection = [[WFHardwareConnector sharedConnector] requestSensorConnection:params];
+            manager.sensorConnection = [[WFHardwareConnector sharedConnector] requestSensorConnection:params];
         }
         
         // set delegate to receive connection status changes.
-        [GEHeartRateDataManager sharedInstance].sensorConnection.delegate = self;
+        manager.sensorConnection.delegate = self;
     }
+}
+-(IBAction)connectHeartRate:(id)sender {
+    NSLog(@"Connect the heart Rate Monitor");
+    [self connectGeneric:WF_SENSORTYPE_HEARTRATE 
+                instance:[GEHeartRateDataManager sharedInstance]];
+}
 
-    
+#pragma mark - Connect Buttons toggled 
+-(IBAction)connectPowerMeter:(id)sender {
+    NSLog(@"Connect the power meter");
+    [self connectGeneric:WF_SENSORTYPE_BIKE_POWER 
+                instance:[GEPowerDataManager sharedInstance]];
 }
 
 #pragma mark - View lifecycle
@@ -75,20 +88,39 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(UIButton *)buttonWithTitle:(NSString *)title frame:(CGRect)frame color:(UIColor *)color target:(id)target action:(SEL)action {
+    UIButton *button = [[UIButton alloc] initWithFrame:frame];
+    [button setTitle:title forState:UIControlStateNormal];
+    button.backgroundColor = color;
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return [button autorelease];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)] autorelease];
+    UIView *header = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kHeaderHeight)] autorelease];
     header.backgroundColor = [UIColor blackColor];
     
-    //Set up the start button
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-    button.backgroundColor = [UIColor redColor];
-    [button addTarget:self action:@selector(connectHeartRate:) forControlEvents:UIControlEventTouchUpInside];
-    [header addSubview:button];
-    [button release];
+    [header addSubview:[self buttonWithTitle:@"heart" 
+                                       frame:CGRectMake(kButtonWidth * 0, 0, kButtonWidth, kHeaderHeight)
+                                       color:[UIColor redColor]
+                                      target:self 
+                                      action:@selector(connectHeartRate:)]];
+    
+    [header addSubview:[self buttonWithTitle:@"power" 
+                                       frame:CGRectMake(kButtonWidth * 1, 0, kButtonWidth, kHeaderHeight)
+                                       color:[UIColor blueColor]
+                                      target:self 
+                                      action:@selector(connectPowerMeter:)]];
+    
+    
+    //Set up the heart rate button
+
+    
+    
     
     self.tableView.tableHeaderView = header;
 }
@@ -196,11 +228,18 @@
     if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuse] autorelease];
     }
+    GESensorData *managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
+    if ([[managedObject class] isSubclassOfClass:[GEPowerData class]]) {
+        GEPowerData *powerObject = (GEPowerData *)managedObject;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ watts",powerObject.accumulatedTorque];
+    }
+    else {
+       GEHeartRateData *hrObject = (GEHeartRateData *)managedObject;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"HR %@",hrObject.computedHeartRate];
+    }
     
-    //TODO optiize this. Should use the actual fetchedResultsController
-    GEHeartRateData *managedObject = (GEHeartRateData *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", managedObject.timestamp];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",managedObject.computedHeartRate];
+
     // Configure the cell with data from the managed object.
     return cell;
 }

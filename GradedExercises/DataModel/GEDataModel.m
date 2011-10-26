@@ -187,11 +187,10 @@ static GEDataModel *gGEDataModel = nil;
 -(GEPowerData *)insertPowerData:(WFBikePowerData *)power saveAfter:(BOOL)saveAfter {
     GEPowerData *newPowerData = [NSEntityDescription insertNewObjectForEntityForName:kGEPowerDataType 
                                                               inManagedObjectContext:self.managedObjectContext];
-//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
-//    newPowerData.accumulatedTorque      = power.fpAccumulatedTorque;
-//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
-//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
-//    newPowerData.calculatedCrankTicks   = power.fpCalculatedCrankTicks;
+    newPowerData.calculatedCrankTicks   = [NSNumber numberWithFloat:power.fpCalculatedCrankTicks];
+    newPowerData.accumulatedTorque      = [NSNumber numberWithFloat:power.fpAccumulatedTorque];
+    newPowerData.calculatedCrankTicks   = [NSNumber numberWithFloat:power.fpCalculatedCrankTicks];
+    newPowerData.timestamp   = [NSDate dateWithTimeIntervalSince1970:power.timestamp];
 
     if (saveAfter) {
         [self.managedObjectContext save:nil];

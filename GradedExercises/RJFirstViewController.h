@@ -18,5 +18,9 @@ UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> 
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+
+-(IBAction)connectPowerMeter:(id)sender;
+
 -(IBAction)connectHeartRate:(id)sender;
+
 @end
