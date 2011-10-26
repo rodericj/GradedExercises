@@ -50,6 +50,11 @@ static GEDataModel *gGEDataModel = nil;
 	return _managedObjectModel;
 }
 
+-(NSString*) applicationDocumentsDirectory
+{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+}
+
 /**
  Returns the persistent store coordinator for the application.
  If the coordinator doesn't already exist, it is created and the application's store added to it.
@@ -60,11 +65,12 @@ static GEDataModel *gGEDataModel = nil;
 		return _persistentStoreCoordinator;
 	}
     
-    NSString *docDir = [[NSFileManager defaultManager] currentDirectoryPath];
-	NSURL *storeUrl = [NSURL fileURLWithPath:[docDir
-											  stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",
-																			  kGradedExercisesCoreDataFile,
-																			  kGradedExercisesCoreDataFileExtension]]];
+    NSString *docDir = [self applicationDocumentsDirectory];
+    NSString *path = [docDir
+                      stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",
+                                                      kGradedExercisesCoreDataFile,
+                                                      kGradedExercisesCoreDataFileExtension]];
+	NSURL *storeUrl = [NSURL fileURLWithPath:path];
     
 	NSError *addPersistentStoreError;
 	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
@@ -79,7 +85,7 @@ static GEDataModel *gGEDataModel = nil;
 		// schema incompatibilities, to back up the existing store, and then create a brand new one with the new schema.
         
 		// In the future, we should use proper schema migration.
-        
+        NSLog(@"%d", [addPersistentStoreError code]);
 		if ([addPersistentStoreError code] == NSPersistentStoreIncompatibleVersionHashError) {
 			NSLog(@"Schema incompatibility, backing up current store.");
 			// Schema version mismatch. Back up the current store, and create a new empty one.
