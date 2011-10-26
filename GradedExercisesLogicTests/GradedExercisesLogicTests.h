@@ -7,7 +7,13 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+//WF Imports
+#import <WFConnector/WFHeartRateData.h>
+#import <WFConnector/WFHeartRateRawData.h>
 
-@interface GradedExercisesLogicTests : SenTestCase
+@interface GradedExercisesLogicTests : SenTestCase {
+    WFHeartrateData *_hrData;
+    WFHeartrateRawData *_rawHRData;
+}
 
 @end

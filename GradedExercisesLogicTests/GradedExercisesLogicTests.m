@@ -9,44 +9,38 @@
 #import "GradedExercisesLogicTests.h"
 #import "GEDataModel.h"
 
-//WF Imports
-#import <WFConnector/WFHeartRateData.h>
-#import <WFConnector/WFHeartRateRawData.h>
-
 @implementation GradedExercisesLogicTests
 
 - (void)setUp
 {
     [super setUp];
     
-    // Set-up code here.
-}
+    _hrData = [[WFHeartrateData alloc] initWithTime:1];
+    _rawHRData = [[WFHeartrateRawData alloc] initWithTime:1];;}
 
 - (void)tearDown
 {
     // Tear-down code here.
-    
+    [_hrData release];
+    [_rawHRData release];
     [super tearDown];
 }
 
-- (void)testAddRandomHeartRate
+- (void)testInsertHeartRateData
 {
-    WFHeartrateData *hrData = [[WFHeartrateData alloc] initWithTime:1];
-    WFHeartrateRawData *rawHRData = [[WFHeartrateRawData alloc] initWithTime:1];;
-    
     int computedHeartRate = 70;
-    hrData.computedHeartrate = computedHeartRate;
+    _hrData.computedHeartrate = computedHeartRate;
     NSNumber *computedHeartRateNumber = [NSNumber numberWithInt:computedHeartRate];
     
     int beatTime = 10;
-    hrData.beatTime = beatTime;
+    _hrData.beatTime = beatTime;
     NSNumber *beatTimeNumber = [NSNumber numberWithInt:beatTime];
     
     int accumBeatCount = 100;
-    hrData.accumBeatCount = accumBeatCount;
+    _hrData.accumBeatCount = accumBeatCount;
     NSNumber *accumBeatCountNumber = [NSNumber numberWithInt:accumBeatCount];
     
-    GEHeartRateData *coreDataHR = [[GEDataModel sharedInstance] insertHeartRateData:hrData rawHeartRateData:rawHRData saveAfter:NO];
+    GEHeartRateData *coreDataHR = [[GEDataModel sharedInstance] insertHeartRateData:_hrData rawHeartRateData:_rawHRData saveAfter:NO];
     STAssertTrue([coreDataHR.computedHeartRate isEqualToNumber:computedHeartRateNumber], @"computed heart rate not set correctly");
     STAssertTrue([coreDataHR.beatTime isEqualToNumber:beatTimeNumber], @"beatTime not set correctly");
     STAssertTrue([coreDataHR.accumBeatCount isEqualToNumber:accumBeatCountNumber], @"accumBeatTime not set correctly");

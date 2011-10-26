@@ -247,6 +247,15 @@
 		176318141453D02E00F9C436 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				178AA3DF1453E19F00B4FB2A /* GEEndpoints */,
+				178AA3DE1453E03400B4FB2A /* ASI */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		178AA3DE1453E03400B4FB2A /* ASI */ = {
+			isa = PBXGroup;
+			children = (
 				176318151453D08E00F9C436 /* ASIAuthenticationDialog.h */,
 				176318161453D08E00F9C436 /* ASIAuthenticationDialog.m */,
 				176318171453D08E00F9C436 /* ASICacheDelegate.h */,
@@ -270,7 +279,14 @@
 				176318291453D08E00F9C436 /* Reachability.h */,
 				1763182A1453D08E00F9C436 /* Reachability.m */,
 			);
-			name = Network;
+			name = ASI;
+			sourceTree = "<group>";
+		};
+		178AA3DF1453E19F00B4FB2A /* GEEndpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GEEndpoints;
 			sourceTree = "<group>";
 		};
 		17E516A5144A4FFC00BB8367 /* GradedExercisesLogicTests */ = {
